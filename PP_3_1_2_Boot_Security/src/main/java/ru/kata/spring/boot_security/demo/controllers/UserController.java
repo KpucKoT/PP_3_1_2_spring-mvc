@@ -30,7 +30,7 @@ public class UserController {
     @GetMapping("/user")
     public String readUser(Principal principal, Model model) {
         User user =  userRepository.findByUsername(principal.getName());
-        model.addAttribute("currentEmployee", user);
+        model.addAttribute("user", user);
         return "user";
     }
 
